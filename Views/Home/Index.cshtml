@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+@{
+    var telefono = "477 410 91 14";
+    var ubicacion = "León, Guanajuato.";
+    var correo1 = "jg.delgadochavez@gmail.com";
+    var correo2 = "jg.delgadochavez@ugto.mx";
+    var sobreMi = "Estudiante de ingenieria en Desarrollo y Gestión de Software y del idioma ingles en la Academia Europea";
+
+    string[] arrHabilidades =
+            {
+                "Word",
+                "PowerPoint",
+                "Excel",
+                "Ingles (Nivel Básico)",
+                "HTML",
+                "CSS",
+                "Java",
+                "Deplhi",
+                "Python"    
+    };
+
+}
+
+<div class="container" style="background-color:white;padding:20px;">
+
+    @* Significado
+    @Html.ActionLink(
+        "PreparacionAcademica",   // Parámetro 1: Texto del enlace que se mostrará al usuario
+        "PreparacionAcademica",   // Parámetro 2: Acción a la que el enlace apunta
+        "Academica",              // Parámetro 3: Controlador al que pertenece la acción
+        null,                     // Parámetro 4: Parámetros de ruta adicionales (en este caso, no se especifican)
+        new { @class = "btn btn-primary" } // Parámetro 5: Atributos HTML adicionales (en este caso, se especifican clases para dar estilo al botón)
+    ) *@
+
+    
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="img/Foto.jpeg" class="rounded float-start"  width="200px" alt="Fotografia Perfil" />
+        </div>
+        <div class="col-sm-8">
+            <h2 class="display-6">
+                Jessica Guadalupe Delgado Chavez
+            </h2>
+            <p>
+                <strong>TSU Desarrollo de Ssoftware Multiplataforma</strong>
+            </p>
+
+            @Html.ActionLink("Preparación Académica", "PreparacionAcademica", "Academica", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Experiencia Laboral", "ExperienciaLaboral", "ExperienciaLaboral", null, new { @class = "btn btn-primary" })
+
+            @* DATOS DE CONTACTO -------------------------------------------------------------------------------------*@
+            <div class="card">
+                <div class="card-body">
+                    <strong>DATOS DE CONTACTO</strong>
+                    <ul id="listaDatosContacto">
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            @telefono
+                        </li>
+                        <li>
+                            <i class="bi bi-globe-americas"></i>
+                            @ubicacion
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            @correo1
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope"></i>
+                            @correo2
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            @* SOBRE MI -------------------------------------------------------------------------------------------*@
+            <div class="card">
+                <div class="card-body">
+                    <strong>SOBRE MI</strong>
+                    <P>
+                        @sobreMi
+                    </P>
+                </div>
+            </div>
+            @* HABILIDADES -------------------------------------------------------------------------------------------*@
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <strong>HABILIDADES</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    @foreach (var habilidad in arrHabilidades)
+                                    {
+                                        <li>@habilidad</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

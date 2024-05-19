@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "PreparacionAcademica";
+}
+
+
+<div class="container" style="background-color:white;padding:20px;">
+
+    <div class="row">
+        <div class="col-sm-1">
+            <img src="~/img/Foto.jpeg" class="rounded float-start" width="50px" alt="Fotografia Perfil" />
+        </div>
+        <div class="col-sm-11">
+            <h2 class="display-6">
+                Jessica Guadalupe Delgado Chavez
+            </h2>
+            <p>
+                <strong>TSU Desarrollo de Ssoftware Multiplataforma</strong>
+            </p>
+            @Html.ActionLink("DatosPersonales", "Index", "Home", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Experiencia Laboral", "ExperienciaLaboral", "ExperienciaLaboral", null, new { @class = "btn btn-primary" })
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <strong>ESTUDIOS</strong>
+                <table id="tblAcademica">
+                    <tr>
+                        <td>2015 - 2017 <i class="bi bi-calendar-check-fill"></i></td>
+                        <td>
+                            <strong>Centro Ejecutivo en Computacion, S.C.</strong> <br />
+                            <p id="txtCertificados">Certificado en “Diseñador en Sistemas Computacionales”</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2017 - 2020 <i class="bi bi-calendar-check-fill"></i></td>
+                        <td>
+                            <strong>Centro Ejecutivo en Computacion, S.C.</strong> <br />
+                            <p id="txtCertificados">Certificado en “Diseñador en Sistemas Computacionales”</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2020 -      <i class="bi bi-calendar-check-fill"></i></td>
+                        <td>
+                            <strong>Universidad Tecnológica de León</strong> <br />
+                            <p id="txtCertificados">
+                                TSU Desarrollo de Software Multiplataforma (2020-2023) <br />
+                                Ingeniería en Desarrollo y Gestión de Software (2024-Actualidad)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
